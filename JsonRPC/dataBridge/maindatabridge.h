@@ -14,10 +14,12 @@ public:
 
 public:
     void broadcastCommandToAll(const Message& message);
-    MainToWorkerBridge* haveNewMainToWorkerBridge(qintptr workerId);
+
     void quitMainToWorkerBridge(qintptr workerId);
     void sendCommandToWorker(qintptr workerId, const Message& message);
 
+public slots:
+    MainToWorkerBridge* haveNewMainToWorkerBridge(qintptr workerId);
 
 public:
     WorkerToMainBridge *workerToMainBridge;

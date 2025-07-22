@@ -35,7 +35,5 @@ void MainServer::onNewConnection(const qintptr socketDescriptor) {
 
     QThreadPool::globalInstance()->start(thread);
 
-    // threadmap_temporary.insert(socketDescriptor,thread); //将该线程对象地址记录备份 临时未注册
-
 }
 

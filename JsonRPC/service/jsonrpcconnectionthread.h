@@ -21,7 +21,7 @@ public:
 public:
     qintptr socketDescriptor;
 
-    MainToWorkerBridge *mainToWorkerBridge;
+    MainToWorkerBridge *mainToWorkerBridge  = nullptr;
 
 };
 

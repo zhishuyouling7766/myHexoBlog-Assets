@@ -19,7 +19,13 @@ JsonRpcConnectionThread::~JsonRpcConnectionThread() {
 
 void JsonRpcConnectionThread::run(){
 
-    mainToWorkerBridge = dataBridge->haveNewMainToWorkerBridge(socketDescriptor); //通道线程开启，立即建立与主线程的数据连接桥
+    // mainToWorkerBridge = dataBridge->haveNewMainToWorkerBridge(socketDescriptor); //通道线程开启，立即建立与主线程的数据连接桥
+
+    QMetaObject::invokeMethod(dataBridge, "haveNewMainToWorkerBridge",
+                              Qt::BlockingQueuedConnection,
+                              Q_RETURN_ARG(MainToWorkerBridge*, mainToWorkerBridge),
+                              Q_ARG(qintptr, socketDescriptor)
+                              );
 
     JsonRpcConnectionHandler *jsonRpcConnectionHandler = new JsonRpcConnectionHandler(socketDescriptor);
 
@@ -66,7 +72,13 @@ void JsonRpcConnectionThread::run(){
     jsonRpcConnectionHandler->deleteLater();
 
     Message msg("command", "mainDataBrige", "quitMainToWorkerBridge",{{"socketDescriptor", socketDescriptor}});
-    dataBridge->workerToMainBridge->pushMessage(msg); //向主线程传递信号：断开数据桥
+
+
+    // dataBridge->workerToMainBridge->pushMessage(msg); //向主线程传递信号：断开数据桥
+    QMetaObject::invokeMethod(dataBridge->workerToMainBridge, "pushMessage",
+                              Qt::QueuedConnection,
+                              Q_ARG(Message, msg)
+                              );
 
 }
 

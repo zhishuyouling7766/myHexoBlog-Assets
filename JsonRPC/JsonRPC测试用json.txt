@@ -1,0 +1,24 @@
+{"jsonrpc":"2.0","method":"register","id": "null", "params": {"time":"2025-05-12 12:11:10","eqCode":"4b313631 ff0e5042 ffff2137","version":"czd20250419 1.0.2"}}
+
+{"jsonrpc":"2.0","method":"register","id": "null", "params": {"time":"2025-05-12 12:11:10","eqCode":"11111111 11111111 11111111","version":"czd20250419 1.0.2"}}
+{"jsonrpc":"2.0","method":"register","id": "null", "params": {"time":"2025-05-12 12:11:10","eqCode":"22222222 22222222 22222222","version":"czd20250419 1.0.2"}}
+{"jsonrpc":"2.0","method":"register","id": "null", "params": {"time":"2025-05-12 12:11:10","eqCode":"33333333 33333333 33333333","version":"czd20250419 1.0.2"}}
+
+心跳：
+{"jsonrpc":"2.0","method":"heartbeat","id":null,"params":{"time":"2025-05-08 12:00:00"}}
+
+
+串口：
+{"jsonrpc":"2.0","id":1,"result":{"status":"success","config":{"baudrate":115200,"dataBits":8,"stopBits":1,"parity":0,"protcal":5,"mode":0}}}
+
+
+can滤波：
+{"jsonrpc":"2.0","id":1,"result":{"status":"success","config":{"count":0,"mode":0,"ids":[11223344,84798291]}}}
+
+//TCP
+{"jsonrpc":"2.0","id":1,"result":{"status":"success","config":{"ip":"10.1.2.3","port":1234,"protcal":6,"isRun":0}}}
+
+
+{"jsonrpc":"2.0","id":1,"error":{"code":-32602,"message":"Missing required parameter: name","data":{"missingParam":"name"}}}
+
+{"jsonrpc":"2.0","id":1,"result":{"status":"success"}}  

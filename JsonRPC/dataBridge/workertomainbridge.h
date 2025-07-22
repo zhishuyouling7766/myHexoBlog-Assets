@@ -12,10 +12,13 @@ class WorkerToMainBridge : public QObject
 public:
     explicit WorkerToMainBridge(QObject* parent = nullptr);
 
-    void pushMessage(const Message& msg);  // 子线程调用
+
     Message takeMessage();                 // 主线程取消息
     Message peekMessage();
     bool hasMessage();
+
+public slots:
+    void pushMessage(const Message& msg);  // 子线程调用
 
 signals:
     void messageReady();  // 通知主线程有新消息
