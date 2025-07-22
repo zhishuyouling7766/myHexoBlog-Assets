@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resource/mainConfig.xml</file>
+        <file>resource/image/jiantou_down.png</file>
+        <file>resource/image/jiantou_up.png</file>
+    </qresource>
+</RCC>

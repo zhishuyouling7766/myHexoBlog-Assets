@@ -1,0 +1,12 @@
+<mainConfig>
+
+	<tcpServerListenPort number="12345"/>
+
+	<deviceIdForName>
+	  <clientDevice id="11111111 11111111 11111111" name="模拟设备1"/>
+	  <clientDevice id="22222222 22222222 22222222" name="模拟设备2"/>
+	  <clientDevice id="33333333 33333333 33333333" name="模拟设备3"/>
+	  <clientDevice id="4b313631 ff0e5042 ffff2137" name="协议拟定设备"/>
+	</deviceIdForName>
+
+</mainConfig>
